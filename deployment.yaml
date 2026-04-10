@@ -14,7 +14,7 @@ app: java-app
 spec:
 containers:
 - name: java-app
-image: <dockerhub-username>/java-app:latest
+image: kaviya6369/java-app:latest
 ---
 apiVersion: v1
 kind: Service
