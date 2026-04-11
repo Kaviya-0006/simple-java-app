@@ -14,10 +14,9 @@ spec:
     spec:
       containers:
       - name: java-app
-        image: kaviya6369/java-app:latest
+        image: kaviya6369/java-app:latest # Use your actual username here
         ports:
-        - containerPort: 8080
-
+        - containerPort: 8082  # Match the port in application.properties
 ---
 apiVersion: v1
 kind: Service
@@ -28,6 +27,6 @@ spec:
   selector:
     app: java-app
   ports:
-  - port: 80
-    targetPort: 8080
-    nodePort: 30008
+    - port: 80
+      targetPort: 8082        # Points to the app port
+      nodePort: 30008         # This is the port you will visit in your browser
